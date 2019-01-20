@@ -1,0 +1,68 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Documents</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+<ion-card *ngFor='let data of mydocument' style='border-radius: 5px;'>
+  <ion-item style='background: lightgrey;'>
+    <h2>{{data.title}}</h2>
+  </ion-item>
+
+  <ion-card-content class='konten'>
+    <h2>Description :</h2>
+    <p class="desc">{{data.desc}}</p>
+    <hr>
+    <ion-row>
+      <ion-col><p class="owner"><ion-icon name="contact"></ion-icon>&ensp;{{data.owner}}</p></ion-col>
+      <ion-col><p class="date">{{data.date | date:'dd/MM/yy hh:MM'}}</p></ion-col>
+    </ion-row>
+    
+    
+  </ion-card-content>
+
+  <ion-row style='text-align: center;'>
+    <ion-col col-4>
+      <button ion-button icon-start clear small (click)='downloadDocument(data.title)'>
+        <ion-icon name="cloud-download"></ion-icon>
+        <div>Download</div>
+      </button>
+    </ion-col>
+      
+    <ion-col col-4>
+      <button ion-button icon-start clear small (click)='editDocument(data.title)'>
+        <ion-icon name="create"></ion-icon>
+        <div>Edit</div>
+      </button>
+    </ion-col>
+
+    <ion-col col-4>
+      <button ion-button icon-start clear small (click)='deleteDocument(data.title)'>
+        <ion-icon name="trash"></ion-icon>
+        <div>Delete</div>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+
+<ion-fab top right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list>
+      <button ion-fab (click)="createDocument()"><ion-icon name="add-circle" ></ion-icon></button>
+      <button ion-fab (click)="myDocument()"><ion-icon name="albums" ></ion-icon></button>
+      <button ion-fab (click)="logout()"><ion-icon name="exit" ></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

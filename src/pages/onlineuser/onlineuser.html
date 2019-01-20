@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      User
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="user">
+      <ion-segment-button value="alluser">
+        All User
+      </ion-segment-button>
+      <ion-segment-button value="onlineuser">
+        Online User
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div [ngSwitch]="user">
+    <ion-list *ngSwitchCase="'alluser'">
+      <div *ngFor="let data of allUser">
+      <ion-item *ngIf="data.username!==loginUser">
+        <div class="username"  (click)="chat(data.username)">{{data.username}}</div>
+      </ion-item>
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'onlineuser'">
+      <div *ngFor="let item of onlineUser">
+          <ion-item *ngIf="item!==loginUser" >
+            <div class="username" (click)="chat(item)">{{item}}</div>
+          </ion-item>
+
+      </div>
+            	
+    </ion-list>
+
+  </div>
+</ion-content>

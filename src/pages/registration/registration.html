@@ -1,0 +1,41 @@
+<!--
+  Generated template for the RegistrationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registration</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input type="text" [(ngModel)]='username'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" [(ngModel)]='password1'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Confirm</ion-label>
+    <ion-input type="password" [(ngModel)]='password2'></ion-input>
+  </ion-item>
+
+<div padding>
+  <button ion-button block (click)='registration()' [disabled]="username===''||password1===''||password2===''">Registration</button>
+</div>
+
+<div padding>
+  <button ion-button block clear (click)='login()'>Login In</button>
+</div>
+
+</ion-content>

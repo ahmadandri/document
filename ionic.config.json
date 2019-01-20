@@ -1,0 +1,7 @@
+{
+  "name": "dokumen",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

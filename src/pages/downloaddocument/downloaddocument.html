@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+   <ion-item>
+      <ion-label floating >File Name : </ion-label>
+     <ion-input type="" [(ngModel)]="fileName" ></ion-input>
+   </ion-item>
+  <button ion-button (click)="generatePdf()" [disabled]="!fileName">Create PDF</button>
+  <button ion-button (click)="checkFile()">Check if PDF Exist</button>
+</ion-content>
+<div id="Html2Pdf">
+
+</div>
