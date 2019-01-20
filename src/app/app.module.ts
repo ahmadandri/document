@@ -24,7 +24,7 @@ import { ChatProvider } from '../providers/chat/chat';
 import { DocumentProvider } from '../providers/document/document';
 
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-const config: SocketIoConfig = { url: 'http://serverdocument.herokuapp.com', options: {} };
+const config: SocketIoConfig = { url: 'ws://serverdocument.herokuapp.com', options: {} };
 
 
 import "froala-editor/js/froala_editor.pkgd.min.js";
