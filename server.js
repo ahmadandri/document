@@ -1,6 +1,6 @@
 var express  = require('express');
 var app      = express();                               
-var morgan = require('morgan');            
+var morgan 		= require('morgan');            
 var bodyParser = require('body-parser');    
 var cors = require('cors');
  
@@ -17,6 +17,6 @@ app.use(function(req, res, next) {
 });
  
 app.use(express.static('www'));
-app.listen(process.env.PORT || 3000), function () {
+app.listen(process.env.PORT || 8100), function () {
   console.log('Express server listening on port ' + app.get('port'));
 });
