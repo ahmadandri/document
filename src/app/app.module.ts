@@ -25,13 +25,6 @@ import { DocumentProvider } from '../providers/document/document';
 
 
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-
-let options = {
-  'force new connection' : true,
-  'reconncetionAttempts': 'Infinity',
-  'timeout':10000,
-  'transport': ['websocket']
-}
 const config: SocketIoConfig = { url: 'https://serverdocument.herokuapp.com', options: {} };
 
 
