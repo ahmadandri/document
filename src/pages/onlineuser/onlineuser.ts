@@ -3,7 +3,7 @@ import { App,IonicPage, NavController, NavParams} from 'ionic-angular';
 import { UserProvider } from '../../providers/user/user'
 import { LoginPage } from '../../pages/login/login'
 import { ChatprivatePage } from '../../pages/chatprivate/chatprivate'
-import * as io from "socket.io-client";
+import { Socket } from 'ng-socket-io'
 /**
  * Generated class for the OnlineuserPage page.
  *
@@ -16,9 +16,7 @@ import * as io from "socket.io-client";
   selector: 'page-onlineuser',
   templateUrl: 'onlineuser.html',
 })
-export class OnlineuserPage {
-  socket: SocketIOClient.Socket;
-	url='http://192.168.43.119:2000'
+export class OnlineuserPage {'
 	allUser=[]
 	onlineUser=[]
   loginUser
@@ -26,9 +24,9 @@ export class OnlineuserPage {
   constructor(public navCtrl: NavController,
   		public navParams: NavParams,
         private userProvider : UserProvider,
-        public app : App) {
-
-          this.socket = io(this.url);
+        public app : App,
+        private socket : Socket) {
+    
           this.socket.on('newUser', () => {
             this.getUser()
           });
