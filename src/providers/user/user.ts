@@ -2,7 +2,9 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Socket } from 'ng-socket-io'
 //import { OnlineuserPage } from '../../pages/onlineuser/onlineuser'
+import * as io from "socket.io-client";
 /*
+import 
   Generated class for the UserProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
@@ -10,10 +12,12 @@ import { Socket } from 'ng-socket-io'
 */
 @Injectable()
 export class UserProvider {
-
+  //socket: SocketIOClient.Socket;
 	userLogin
 
   constructor(private socket : Socket) {
+
+    //this.socket = io('http://documentserver.herokuapp.com:80/');
   }
 
   setUser(data){

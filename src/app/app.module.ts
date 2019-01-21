@@ -25,7 +25,7 @@ import { DocumentProvider } from '../providers/document/document';
 
 
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-const config: SocketIoConfig = { url: 'https://serverdocument.herokuapp.com', options: {} };
+const config: SocketIoConfig = { url: 'http://documentserver.herokuapp.com:80', options: {} };
 
 
 import "froala-editor/js/froala_editor.pkgd.min.js";
